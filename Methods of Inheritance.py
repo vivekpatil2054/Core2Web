@@ -84,4 +84,111 @@ print(obj.x)
 print(obj.y)
 print(obj.z)
 
+#multiple inheritance
+
+#program1
+class demochild1():
+    def __init__(self):
+        super().__init__()
+        print("demochild1 constructor")
+        self.y = 20
+class demochild2():
+    def __init__(self):
+        super().__init__()
+        print("demochild2 constructor")
+        self.z = 30
+class demo(demochild1,demochild2):
+    def __init__(self):
+        print("demo constructor")
+obj = demo()
+print(obj.y)
+#print(obj.z)
+
+#program2
+class demochild1():
+    def __init__(self):
+        super().__init__()
+        print("demochild1 constructor")
+        # self.y = 20
+class demochild2():
+    def __init__(self):
+        super().__init__()
+        print("demochild2 constructor")
+        # self.z = 30
+class demo(demochild1,demochild2):
+    def __init__(self):
+        print("demo constructor")
+obj = demo()
+print(demo.__mro__)
+
+#program3
+class demochild1():
+    def __init__(self):
+        super().__init__()
+        print("demochild1 constructor")
+        # self.y = 20
+class demochild2():
+    def __init__(self):
+        super().__init__()
+        print("demochild2 constructor")
+        # self.z = 30
+class demo(demochild2,demochild1):
+    def __init__(self):
+        print("demo constructor")
+obj = demo()
+print(demo.__mro__)
+
+#MRO(Method Resolution Order)
+
+#program1
+class demochild1():
+    def __init__(self):
+        print("demochild1 constructor")
+class demochild2():
+    def __init__(self):
+        print("demochild2 constructor")
+class demo(demochild2,demochild1):
+    def __init__(self):
+        super().__init__()
+        print("demo constructor")
+print(globals())
+obj = demo()
+print(demo.__mro__)
+
+#program2
+class demochild1():
+    def __init__(self):
+        print("demochild1 constructor")
+class demochild2():
+    def __init__(self):
+        print("demochild2 constructor")
+class demo(demochild2,demochild1):
+    def __init__(self):
+        super().__init__()
+        print("demo constructor")
+print(type.__dict__)
+obj = demo()
+print(demo.__mro__)
+
+#program3
+class demochild1():
+    def __init__(self):
+        super().__init__()
+        print("demochild1 constructor")
+class demochild2():
+    def __init__(self):
+        super().__init__()
+        print("demochild2 constructor")
+class demo(demochild2,demochild1):
+    def __init__(self):
+        super().__init__()
+        print("demo constructor")
+obj = demo()
+print(demo.__mro__)
+
+
+
+
+
+
 
